@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xml.kitfox.com/schema/volumeViewer/cubeState"
+    xmlns:tns="http://xml.kitfox.com/schema/volumeViewer/cubeState"
+    elementFormDefault="qualified">
+    <xsd:complexType name="cubeType">
+        <xsd:sequence>
+            <xsd:element name="volumeRadius" type="tns:vectorType"></xsd:element>
+            <xsd:element name="lightDir" type="tns:vectorType"></xsd:element>
+            <xsd:element name="lightColor" type="tns:vectorType"></xsd:element>
+            <xsd:element name="lightingStyle" type="tns:lightingStyleType" default="NONE"></xsd:element>
+            <xsd:element name="sectorMask" type="tns:sectorMaskType"></xsd:element>
+            <xsd:element name="opacityRef" type="xsd:float"></xsd:element>
+            <xsd:element name="numPlanes" type="xsd:int" default="1"></xsd:element>
+            <xsd:element name="drawWireframe" type="xsd:boolean" default="true"></xsd:element>
+            <xsd:element name="drawLightbuffer" type="xsd:boolean" default="true"></xsd:element>
+            <xsd:element name="transfer" type="tns:transferType"></xsd:element>
+            <xsd:element name="multisampled" type="xsd:boolean" default="false"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="vectorType">
+        <xsd:sequence/>
+        <xsd:attribute name="x" type="xsd:float" default="0"/>
+        <xsd:attribute name="y" type="xsd:float" default="0"/>
+        <xsd:attribute name="z" type="xsd:float" default="0"/>
+    </xsd:complexType>
+    <xsd:simpleType name="lightingStyleType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="NONE"/>
+            <xsd:enumeration value="PHONG"/>
+            <xsd:enumeration value="DIFFUSE"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="sectorMaskType">
+        <xsd:sequence>
+            <xsd:element name="mask" type="xsd:int"></xsd:element>
+            <xsd:element name="center" type="tns:vectorType"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="transferType">
+        <xsd:sequence>
+            <xsd:element name="transferFunction" type="xsd:base64Binary"></xsd:element>
+            <xsd:element name="brushSize" type="xsd:float" default="10"></xsd:element>
+            <xsd:element name="brushOpacity" type="xsd:float" default=".5"></xsd:element>
+            <xsd:element name="brushSharp" type="xsd:float" default=".5"></xsd:element>
+            <xsd:element name="brushColor" type="tns:vectorType"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="navigatorType">
+        <xsd:sequence>
+            <xsd:element name="yaw" type="xsd:float"></xsd:element>
+            <xsd:element name="pitch" type="xsd:float"></xsd:element>
+            <xsd:element name="radius" type="xsd:float"></xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
+
+
+
+
+

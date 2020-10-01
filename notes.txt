@@ -1,0 +1,22 @@
+data update:
+DataLoaderPanel -PropertyChange-> TestFrame(DataLoader) -setData-> Cube
+
+threshhold:
+	-sum
+	-single
+	
+strahelen analyse
+	ist besser das aufer graka zu machen, da dort direkt die aplha-werte des renderings vorhanden sind
+	
+Wysiwyp:
+	problem bei zwei dicken wänden wie zb.. schädel
+	
+Cross Ray:
+	ermöglicht es in leere beriche zu klicken zb. augen
+	setzt sichbarkeit des ziels von min 2 blick winkeln vorraus
+	
+	
+TODO:
+		
+	import differned format
+		meta data in filename
